@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_home_graph"
+    app:startDestination="@id/AstronautFragment">
+    <fragment
+        android:id="@+id/AstronautFragment"
+        android:name="com.sweny.suncorp.astronautapplication.fragment.AstronautFragment"
+        tools:layout="@layout/fragment_astronauts">
+        <action
+            android:id="@+id/action_astronautslistfragment_to_astronautdetailsfragment"
+            app:destination="@id/AstronautDetailsFragment">
+            <argument
+                android:name="astronautId"
+                app:argType="string"
+                />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/AstronautDetailsFragment"
+        android:name="com.sweny.suncorp.astronautapplication.fragment.AstronautDetailsFragment"
+        tools:layout="@layout/fragment_astronauts">
+    <argument
+        android:name="astronautId"
+        app:argType="string"
+        />
+    </fragment>
+</navigation>
