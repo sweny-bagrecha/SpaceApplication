@@ -7,14 +7,13 @@
     android:layout_height="wrap_content"
     android:paddingLeft="@dimen/dp16"
     android:paddingRight="@dimen/dp16"
-    android:paddingTop="@dimen/dp16"
-    android:background="@color/colorBackgroundDark">
+    android:paddingTop="@dimen/dp16">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp54"
+            android:layout_marginLeft="@dimen/dp70"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -53,12 +52,13 @@
 
             <ImageView
                 android:id="@+id/profile_image"
-                android:layout_width="@dimen/dp26"
-                android:layout_height="@dimen/dp26"
+                android:layout_width="@dimen/dp50"
+                android:layout_height="@dimen/dp50"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                android:contentDescription="Profile Pictures"
                 app:tint="@color/white" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

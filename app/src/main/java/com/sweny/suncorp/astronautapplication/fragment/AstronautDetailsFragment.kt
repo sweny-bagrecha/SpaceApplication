@@ -14,9 +14,12 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.navArgs
 import com.sweny.suncorp.astronautapplication.R
 import com.sweny.suncorp.astronautapplication.adapters.AstronautDetailsAdapter
+import com.sweny.suncorp.astronautapplication.databinding.FragmentAstronautsDetailsBinding
 import com.sweny.suncorp.astronautapplication.utils.showAlertDialog
 import com.sweny.suncorp.astronautapplication.viewmodels.AstronautDetailsViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class AstronautDetailsFragment : BaseTripFragment() {
     private val viewModel: AstronautDetailsViewModel by viewModels()
 
@@ -24,8 +27,7 @@ class AstronautDetailsFragment : BaseTripFragment() {
     override val baseViewModel: BaseTripViewModel
         get() = viewModel
 
-    private var mAstronauts :AstronautData? = null
-    private lateinit var binding: FragmentAstronautsBinding
+    private lateinit var binding: FragmentAstronautsDetailsBinding
 
     private val args: AstronautDetailsFragmentArgs by navArgs()
 
@@ -33,7 +35,7 @@ class AstronautDetailsFragment : BaseTripFragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentAstronautsBinding.inflate(inflater, container, false)
+        binding = FragmentAstronautsDetailsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -45,8 +47,6 @@ class AstronautDetailsFragment : BaseTripFragment() {
 
     private fun setupObservers() {
         viewModel.astronautDetails.observe(viewLifecycleOwner, Observer { itemDetail ->
-
-            mAstronauts = itemDetail
             setupRv(binding.rvSpaceAstronauts, itemDetail)
         })
 
@@ -62,6 +62,10 @@ class AstronautDetailsFragment : BaseTripFragment() {
 
     }
 
+    /**
+     * Setup recyclerview and attach to adapter
+     *
+     */
     private fun setupRv(rv: RecyclerView, astronauts: AstronautData) {
         with(rv) {
             layoutManager = LinearLayoutManager(this.context)

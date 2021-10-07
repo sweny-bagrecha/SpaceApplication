@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
  * Base trip view model encapsulate error handling functionality
  * from business and data layers
  *
- * All viewmodels in the Trips journey must extend this class
+ * All viewmodels in the Astronauts journey must extend this class
  *
  * viewmodels can use apiErrorHandler to easily handle all exceptions
  * thrown in use cases as long as corresponding fragments extend

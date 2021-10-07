@@ -1,6 +1,6 @@
 package com.sweny.suncorp.astronautapplication.api
 
-import com.wtpapp.data.dto.AstronautResponse
+import com.sweny.suncorp.astronautapplication.dto.AstronautResponse
 import retrofit2.Response
 import retrofit2.http.GET
 

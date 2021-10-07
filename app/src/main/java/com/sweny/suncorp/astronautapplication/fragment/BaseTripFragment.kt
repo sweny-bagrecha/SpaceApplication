@@ -15,7 +15,7 @@ import com.sweny.suncorp.astronautapplication.viewmodels.BaseTripViewModel
  * Base trip fragment
  *
  * Base class used to handle all UI functionality common
- * across fragments in the trip journey
+ * across fragments in the astronauts journey
  *
  * It works in conjunction with BaseTripViewModel
  *

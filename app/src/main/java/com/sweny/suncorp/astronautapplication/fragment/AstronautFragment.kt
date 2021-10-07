@@ -26,7 +26,6 @@ class AstronautFragment : BaseTripFragment() {
     override val baseViewModel: BaseTripViewModel
         get() = viewModel
 
-    private var mAstronauts: List<AstronautData>? = null
     private lateinit var binding: FragmentAstronautsBinding
 
     override fun onCreateView(
@@ -40,14 +39,26 @@ class AstronautFragment : BaseTripFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //observer
         setupObservers()
+
+        binding.sortBtn.setOnClickListener {
+         viewModel.onAddButtonClick()
+        }
     }
 
     private fun setupObservers() {
         viewModel.astronautsList.observe(viewLifecycleOwner, Observer { items ->
 
-            mAstronauts = items
-            setupRv(binding.rvSpaceAstronauts, items)
+            if(items.isEmpty()){
+                binding.clNoDataView.visibility = View.VISIBLE
+                binding.clListView.visibility = View.GONE
+            }
+            else{
+                binding.clNoDataView.visibility = View.GONE
+                binding.clListView.visibility = View.VISIBLE
+            }
+                setupRv(binding.rvSpaceAstronauts, items)
         })
 
         viewModel.apiError.observe(viewLifecycleOwner, {
@@ -73,15 +84,18 @@ class AstronautFragment : BaseTripFragment() {
         findNavController().navigate(action)
     }
 
+    /**
+     * Setup recyclerview and attach to adapter
+     *
+     */
     private fun setupRv(rv: RecyclerView, astronauts: List<AstronautData>) {
         with(rv) {
             layoutManager = LinearLayoutManager(this.context)
             adapter = AstronautsAdapter(astronauts, viewModel)
         }
     }
-
     override fun onResume() {
-        viewModel.refreshTrips()
+        viewModel.refreshAstronauts()
         super.onResume()
     }
 

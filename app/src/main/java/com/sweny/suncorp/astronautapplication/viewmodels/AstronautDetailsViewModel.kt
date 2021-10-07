@@ -1,11 +1,9 @@
 package com.sweny.suncorp.astronautapplication.viewmodels
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.sweny.suncorp.astronautapplication.model.AstronautData
 import com.sweny.suncorp.astronautapplication.usecase.IAstronautsUseCase
-import com.sweny.suncorp.astronautapplication.utils.SingleLiveEvent
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
@@ -17,6 +15,11 @@ class AstronautDetailsViewModel @Inject constructor(private val astronautUseCase
     val astronautDetails: LiveData<AstronautData>
         get() = mAstronautsList
 
+    /**
+     * get details of a selected astronaut
+     *
+     * @param id astronaut id
+     */
     fun getAstronautDetails(id: String) = processUseCase {
             mAstronautsList.value = astronautUseCase.getAstronautDetails(id)
     }

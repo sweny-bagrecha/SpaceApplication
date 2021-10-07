@@ -1,4 +1,4 @@
-package com.wtpapp.data.dto
+package com.sweny.suncorp.astronautapplication.dto
 
 import java.lang.Exception
 
@@ -9,14 +9,15 @@ open class BaseAstronautResponse {
 }
 
 data class AstronautResponse(
-    val result: ArrayList<AstronautDto>
+    val results: ArrayList<AstronautDto>
 ) : BaseAstronautResponse()
 
 data class AstronautDto(
     val id: String? = null,
     val name: String? = null,
     val nationality: String? = null,
-    val profile_image_thumnail: String? = null,
+    val profile_image: String? = null,
+    val profile_image_thumbnail: String? = null,
     val bio: String? = null,
     val date_of_birth: String? = null
 )

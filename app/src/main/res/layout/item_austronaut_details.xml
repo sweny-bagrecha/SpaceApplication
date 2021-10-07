@@ -8,51 +8,101 @@
     android:paddingLeft="@dimen/dp16"
     android:paddingRight="@dimen/dp16"
     android:paddingTop="@dimen/dp16"
+    android:paddingBottom="@dimen/dp16"
     android:background="@color/colorBackgroundDark">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/dp54"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/cl_icon">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/name"
                 android:ellipsize="end"
-                android:maxLines="1"
+                android:maxLines="3"
                 android:text="Sweny Bagrecha"
                 android:textColor="@color/white"
                 android:textSize="@dimen/dp22"
-                android:layout_marginBottom="@dimen/dp4"
+                android:layout_marginBottom="@dimen/dp8"
                 android:layout_marginRight="@dimen/dp16"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/nameText"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameText"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Name: "
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="@dimen/dp22"
+                android:layout_marginBottom="@dimen/dp8"
+                android:layout_marginRight="@dimen/dp16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/name"
                 app:layout_constraintTop_toTopOf="parent"
                 />
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/nationality"
                 android:text="Australian"
                 android:textColor="@color/white"
                 android:textSize="@dimen/dp16"
                 android:layout_marginRight="@dimen/dp16"
-                app:layout_constraintTop_toBottomOf="@id/name"
+                app:layout_constraintTop_toBottomOf="@id/nameText"
+                app:layout_constraintStart_toEndOf="@id/nationalityText"
                 />
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/nationalityText"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Nationality: "
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="@dimen/dp16"
+                android:layout_marginBottom="@dimen/dp8"
+                android:layout_marginRight="@dimen/dp16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/nationality"
+                app:layout_constraintTop_toBottomOf="@id/nameText"
+                />
+            <TextView
+                android:layout_width="@dimen/dp350"
                 android:layout_height="wrap_content"
                 android:id="@+id/bio"
-                android:text="Android Developer"
+                android:text="Android Developer hshdvxhvsdxhdsvhxvdhxdshgds xjdvxchdgvchdvchdv vxjdvcxhdvxc"
                 android:textColor="@color/white"
                 android:textSize="@dimen/dp16"
-                android:layout_marginRight="@dimen/dp16"
-                app:layout_constraintTop_toBottomOf="@id/nationality"
+                app:layout_constraintTop_toBottomOf="@id/nationalityText"
+                app:layout_constraintStart_toEndOf="@id/bioText"
                 />
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bioText"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Bio: "
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="@dimen/dp16"
+                android:layout_marginBottom="@dimen/dp8"
+                android:layout_marginRight="@dimen/dp16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/bio"
+                app:layout_constraintTop_toBottomOf="@id/nationalityText"
+                />
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/date_of_birth"
                 android:text="01/01/1995"
@@ -60,33 +110,55 @@
                 android:textSize="@dimen/dp16"
                 android:layout_marginRight="@dimen/dp16"
                 app:layout_constraintTop_toBottomOf="@id/bio"
+                app:layout_constraintStart_toEndOf="@id/date_of_birth_Text"
                 />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/date_of_birth_Text"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="DOB: "
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="@dimen/dp16"
+                android:layout_marginBottom="@dimen/dp8"
+                android:layout_marginRight="@dimen/dp16"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/date_of_birth"
+                app:layout_constraintTop_toBottomOf="@id/bio"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cl_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintTop_toTopOf="@id/cl_text"
-            app:layout_constraintBottom_toBottomOf="@id/cl_text"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp200"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/cl_text"
             app:layout_constraintStart_toStartOf="parent">
 
             <ImageView
                 android:id="@+id/profile_image"
-                android:layout_width="@dimen/dp26"
-                android:layout_height="@dimen/dp26"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp150"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:tint="@color/white" />
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="DETAILS"
+                android:textStyle="bold"
+                android:textSize="@dimen/dp26"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/dp10"
+                android:layout_marginBottom="@dimen/dp28"
+                app:layout_constraintTop_toBottomOf="@+id/profile_image">
+            </TextView>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/colorLightGrey"
-        android:layout_marginTop="@dimen/dp14"
-        app:layout_constraintTop_toBottomOf="@id/cl_text" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

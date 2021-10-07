@@ -2,9 +2,9 @@ package com.sweny.suncorp.astronautapplication.repository
 
 import com.google.gson.Gson
 import com.sweny.suncorp.astronautapplication.api.AstronautsApiService
-import com.wtpapp.data.dto.AstronautDto
-import com.wtpapp.data.dto.AstronautResponseException
-import com.wtpapp.data.dto.BaseAstronautResponse
+import com.sweny.suncorp.astronautapplication.dto.AstronautDto
+import com.sweny.suncorp.astronautapplication.dto.AstronautResponseException
+import com.sweny.suncorp.astronautapplication.dto.BaseAstronautResponse
 import retrofit2.Response
 import javax.inject.Inject
 
@@ -14,7 +14,7 @@ interface ISpaceRepository {
 }
 
 /**
- * Trips repository with local cache
+ * repository with local cache
  *
  * @property apiService
  * @property data
@@ -55,7 +55,7 @@ class SpaceRepositoryImpl @Inject constructor(
     }
 
     /**
-     * Parse error body - helper method to convert error response into TripResponseException
+     * Parse error body - helper method to convert error response into AstronautResponseException
      *
      * @param errorBody
      */
@@ -70,7 +70,7 @@ class SpaceRepositoryImpl @Inject constructor(
     override suspend fun getAstronauts(): ArrayList<AstronautDto> =
         processApiCall {
             apiService.getAstronautsList()
-        }.result.also {
+        }.results.also {
             //setup local cache
             astronautsDtoCache = it
         }

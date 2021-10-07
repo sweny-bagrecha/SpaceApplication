@@ -1,7 +1,0 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-
-    <style name="BlurredDialogStyle" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
-        <item name="android:backgroundDimAmount">0.8</item>
-    </style>
-
-</resources>

@@ -20,7 +20,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:textSize="@dimen/dp26"
-                        android:text="ASTRONAUTS DATA"
+                        android:text="ASTRONAUTS DETAILS"
                         android:layout_marginLeft="@dimen/dp16"
                         android:layout_marginTop="@dimen/dp22"
                         android:layout_marginBottom="@dimen/dp16"
@@ -31,46 +31,13 @@
 
                 </com.google.android.material.appbar.AppBarLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/sortBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="SORT BY NAME"
-        android:textColor="@color/white"
-        android:textSize="@dimen/dp22"
-        android:background="@color/colorSecondaryDark"
-        android:layout_margin="@dimen/dp16"
-        android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/app_bar_layout">
-
-    </androidx.appcompat.widget.AppCompatButton>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/cl_list_flow"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/dp16"
         android:background="@color/colorBackgroundDark"
-        app:layout_constraintTop_toBottomOf="@id/sortBtn">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cl_no_data_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
-
-          <TextView
-                android:id="@+id/no_trips"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="NO DATA AVAILABLE"
-                android:textColor="@color/white"
-                android:gravity="center"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-     </androidx.constraintlayout.widget.ConstraintLayout>
+        app:layout_constraintTop_toBottomOf="@id/app_bar_layout">
 
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scroll_view"
